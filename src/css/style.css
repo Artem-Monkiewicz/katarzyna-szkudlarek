@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+section {
+    margin: 2rem auto;
+    max-width: 800px;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #4CAF50;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Styl dla kontenera, który łączy zdjęcie i tekst */
+.container {
+    display: flex;
+    align-items: center;  /* Wyśrodkowanie elementów w pionie */
+    gap: 20px;  /* Odstęp między zdjęciem a tekstem */
+}
+
+/* Styl dla zdjęcia */
+.container img {
+    width: 150px;  /* Zmniejszenie szerokości zdjęcia */
+    height: auto;  /* Zachowanie proporcji */
+    border-radius: 50%; /* Zaokrąglenie zdjęcia */
+}
+
+/* Styl dla sekcji tekstu */
+.text {
+    flex: 1;  /* Pozwoli, aby tekst zajmował pozostałą przestrzeń */
+}
+
+.text h2 {
+    margin-top: 0;  /* Usunięcie marginesu górnego */
+}
+
+/* Styl dla kontenera z przyciskiem */
+.review-container {
+    text-align: center;  /* Wyśrodkowanie kontenera */
+    margin-top: 2rem;    /* Odstęp od poprzednich elementów */
+}
+
+/* Styl dla przycisku */
+.review-button {
+    background-color: #4CAF50;  /* Kolor tła przycisku */
+    color: white;               /* Kolor tekstu */
+    padding: 10px 20px;         /* Odstępy wewnętrzne */
+    font-size: 16px;            /* Rozmiar czcionki */
+    text-decoration: none;      /* Usunięcie podkreślenia */
+    border-radius: 5px;         /* Zaokrąglenie rogów */
+    display: inline-block;      /* Umożliwia wyśrodkowanie */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Płynna zmiana kolorów i cienia */
+}
+
+/* Styl przycisku po najechaniu */
+.review-button:hover {
+    background-color: #45a049;  /* Zmiana koloru tła */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Dodanie cienia */
+}

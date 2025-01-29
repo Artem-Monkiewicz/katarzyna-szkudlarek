@@ -1,79 +1,173 @@
+:root {
+    --primary-color: #4CAF50;  /* Primary color */
+    --text-color: #333;         /* Text color */
+    --bg-color: #f4f4f9;        /* Background color */
+    --button-hover-color: #45a049; /* Button color on hover */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 header {
-    background: #4CAF50;
+    background: var(--primary-color);
     color: white;
-    padding: 1rem 0;
-    text-align: center;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
 }
 
+header .logo a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #dfffd8;
+}
+.burger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .burger-menu {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    
+    nav {
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        width: 200px;
+    }
+    
+    nav ul {
+        display: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+        transform: translateY(-10px);  /* Start position for animation */
+        flex-direction: column;
+        background: var(--primary-color);
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul.show {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content */
 section {
-    margin: 2rem auto;
     max-width: 800px;
+    margin: 2rem auto;
     padding: 1rem;
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Picture and text */
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.container img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.text {
+    flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.review-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Button */
+.review-button {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+.review-button:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Basement */
 footer {
     text-align: center;
     padding: 1rem;
-    background: #4CAF50;
+    background: var(--primary-color);
     color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Styl dla kontenera, który łączy zdjęcie i tekst */
-.container {
-    display: flex;
-    align-items: center;  /* Wyśrodkowanie elementów w pionie */
-    gap: 20px;  /* Odstęp między zdjęciem a tekstem */
-}
-
-/* Styl dla zdjęcia */
-.container img {
-    width: 150px;  /* Zmniejszenie szerokości zdjęcia */
-    height: auto;  /* Zachowanie proporcji */
-    border-radius: 50%; /* Zaokrąglenie zdjęcia */
-}
-
-/* Styl dla sekcji tekstu */
-.text {
-    flex: 1;  /* Pozwoli, aby tekst zajmował pozostałą przestrzeń */
-}
-
-.text h2 {
-    margin-top: 0;  /* Usunięcie marginesu górnego */
-}
-
-/* Styl dla kontenera z przyciskiem */
-.review-container {
-    text-align: center;  /* Wyśrodkowanie kontenera */
-    margin-top: 2rem;    /* Odstęp od poprzednich elementów */
-}
-
-/* Styl dla przycisku */
-.review-button {
-    background-color: #4CAF50;  /* Kolor tła przycisku */
-    color: white;               /* Kolor tekstu */
-    padding: 10px 20px;         /* Odstępy wewnętrzne */
-    font-size: 16px;            /* Rozmiar czcionki */
-    text-decoration: none;      /* Usunięcie podkreślenia */
-    border-radius: 5px;         /* Zaokrąglenie rogów */
-    display: inline-block;      /* Umożliwia wyśrodkowanie */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Płynna zmiana kolorów i cienia */
-}
-
-/* Styl przycisku po najechaniu */
-.review-button:hover {
-    background-color: #45a049;  /* Zmiana koloru tła */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Dodanie cienia */
+    font-weight: bold;
 }

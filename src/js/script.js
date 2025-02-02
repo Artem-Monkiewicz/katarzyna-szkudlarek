@@ -15,3 +15,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// AJAX form sending
+const form = document.getElementById("contact-form");
+
+if (form) { // Check if there is a form on the page
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();  // Cancel standard form submission
+
+        const formData = new FormData(form);
+
+        fetch("http://127.0.0.1:5000/send_email", { // Sending data to Flask
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("Wiadomość wysłana!");
+                form.reset();
+            } else {
+                alert("Błąd podczas wysyłania wiadomości.");
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+}

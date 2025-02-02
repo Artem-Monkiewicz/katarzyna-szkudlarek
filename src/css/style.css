@@ -120,8 +120,47 @@ section {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+.about {
+    padding: 2rem;
+}
+
+.qualifications, .specialization, .services, .workplace, .skills {
+    margin-bottom: 2rem;
+}
+
+.center-button {
+    text-align: center;
+}
+
 /* Kontakt form */
-/* General styles for the form */
 form {
     display: flex;
     flex-direction: column;
@@ -209,7 +248,6 @@ button:disabled {
     margin-top: 2rem;
 }
 
-/* Button */
 .review-button {
     background: var(--primary-color);
     color: white;
@@ -227,7 +265,7 @@ button:disabled {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Basement */
+/* Footer */
 footer {
     text-align: center;
     padding: 1rem;

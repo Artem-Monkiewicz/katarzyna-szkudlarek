@@ -1,1 +1,8 @@
+# For macOS users
+.DS_Store
+
+# For Node.js projects (если вдруг используешь npm)
+node_modules/
+
+# .env - если появятся секреты, не коммитить
 .env

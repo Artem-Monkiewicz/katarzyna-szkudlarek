@@ -6,7 +6,6 @@
     <title>Kontakt - Katarzyna Szkudlarek</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/script.js"></script>
 </head>
 <body>
     <header>
@@ -25,7 +24,7 @@
 
     <section>
         <h2>Kontakt z lekarzem</h2>
-        <form id="contact-form" action="http://127.0.0.1:5000/send_email" method="post">
+        <form id="contact-form" action="https://formspree.io/f/xkgobvpe" method="POST">
             <div class="form-group">
                 <label for="name">Imię i nazwisko:</label>
                 <input type="text" id="name" name="name" placeholder="Twoje imię i nazwisko" required>
@@ -48,6 +47,11 @@
     
             <button type="submit">Wyślij</button>
         </form>
+
+        <!-- Block for message about successful sending -->
+        <div id="success-message" style="display: none; color: green; font-size: 16px; margin-top: 10px;">
+            Dziękujemy! Twoja wiadomość została wysłana.
+        </div>
     </section>
 
     <footer>
